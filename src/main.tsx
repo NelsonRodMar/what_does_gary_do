@@ -9,8 +9,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <PuzzleWalletProvider
       dAppName="What's Gary doing ?"
       dAppDescription='A friendly wager between friends'
-      dAppUrl='https://wheresalex.puzzle.online'
-      dAppIconURL='https://wheresalex.puzzle.online/gary_head.png'
+      dAppUrl='https://what-does-gary-do.vercel.app/'
+      dAppIconURL='./src/assets/gary_head.png'
     >
       <App />
     </PuzzleWalletProvider>
