@@ -3,7 +3,7 @@ import Nav from '@components/Nav';
 import ChooseGaryDecision from '@components/ChooseGaryDecision';
 import PageHeader from '@components/PageHeader';
 import Button from '@components/Button';
-import { Answer } from '@state/RecordTypes/what_does_gary_do_vxxx';
+import { Answer } from '@state/RecordTypes/wheres_alex_vxxx';
 import { Step, useNewGameStore } from './store';
 
 function SetGaryDecision() {
@@ -18,7 +18,7 @@ function SetGaryDecision() {
       <div className='flex h-full w-full flex-col items-center gap-2 px-5'>
         <Nav step={2} />
         <PageHeader
-          text='WHAT WOULD YOU LIKE TO GARY DO ?'
+          text="WHAT'S GARY DOING ?"
           bg='bg-primary-blue'
         />
         <ChooseGaryDecision
