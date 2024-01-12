@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 import Button from '@components/Button.js';
 import PageHeader from '@components/PageHeader.js';
-import SelectedAlexLocation from '@components/SelectedAlexLocation.js';
+import SelectedGaryDecision from '@components/SelectedGaryDecision.js';
 import Wager from '@components/Wager.js';
 import Versus from '@components/Versus.js';
 import { useGameStore } from '@state/gameStore.js';
-import { Answer } from '@state/RecordTypes/wheres_alex_vxxx.js';
+import { Answer } from '@state/RecordTypes/what_does_gary_do_vxxx.js';
 import {
   GAME_FUNCTIONS,
   GAME_PROGRAM_ID,
@@ -104,8 +104,8 @@ const Reveal = () => {
     (currentGame?.gameNotification.recordData.total_pot ?? 0) / 2;
   const answer =
     inputs?.challenger_answer_record?.data.answer === '0field'
-      ? Answer.InTheWeeds
-      : Answer.BehindTheBuilding;
+      ? Answer.ManipulatingTheMarket
+      : Answer.ApprovingBTCETF;
 
   const createEvent = async () => {
     if (
@@ -160,9 +160,9 @@ const Reveal = () => {
       {wagerAmount && <Wager wagerAmount={wagerAmount} />}
       {answer && (
         <div className='flex flex-col gap-2'>
-          <SelectedAlexLocation answer={answer} win={undefined} />
+          <SelectedGaryDecision answer={answer} win={undefined} />
           <div className='self-center whitespace-nowrap text-center text-sm font-extrabold tracking-tight text-primary-green'>
-            You chose to hide Alex {answer}!
+            You chose {answer}!
           </div>
         </div>
       )}

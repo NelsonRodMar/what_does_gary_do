@@ -1,38 +1,38 @@
-import inWeedsImg from '../assets/in_weeds.jpg';
-import behindBuildingImg from '../assets/behind_building.svg';
-import { Answer } from '@state/RecordTypes/wheres_alex_vxxx';
+import approvingBtcEtf from '../assets/approving_btc_etf.jpg';
+import manipulatingMarketImg from '../assets/manipulating_the_market.jpg';
+import { Answer } from '@state/RecordTypes/what_does_gary_do_vxxx';
 
-type HideAlexProps = {
+type ChooseGaryProps = {
   setAnswer: (answer: Answer) => void;
   answer?: Answer;
-  hiding: boolean; // are we hiding alex? or finding alex?
+  hiding: boolean; // are we setting gary decision ? or finding gary decision ?
 };
 
-function ChooseAlexLocation({ setAnswer, answer, hiding }: HideAlexProps) {
+function ChooseGaryDecision({ setAnswer, answer, hiding }: ChooseGaryProps) {
   return (
     <section className='mt-4 flex max-w-full flex-col gap-4'>
       <div className='flex gap-5'>
-        <AlexButton
-          imgSrc={inWeedsImg}
-          text='In the Weeds'
-          onClick={() => setAnswer(Answer.InTheWeeds)}
-          selected={answer ? answer === Answer.InTheWeeds : undefined}
+        <GaryButton
+          imgSrc={manipulatingMarketImg}
+          text='Manipulating the market'
+          onClick={() => setAnswer(Answer.ManipulatingTheMarket)}
+          selected={answer ? answer === Answer.ManipulatingTheMarket : undefined}
         />
-        <AlexButton
-          imgSrc={behindBuildingImg}
-          text='Behind the Building'
-          onClick={() => setAnswer(Answer.BehindTheBuilding)}
-          selected={answer ? answer === Answer.BehindTheBuilding : undefined}
+        <GaryButton
+          imgSrc={approvingBtcEtf}
+          text='Approving Bitcoin ETF'
+          onClick={() => setAnswer(Answer.ApprovingBTCETF)}
+          selected={answer ? answer === Answer.ApprovingBTCETF : undefined}
         />
       </div>
       <p className='self-center whitespace-nowrap text-center text-sm font-extrabold tracking-tight text-primary-green'>
         {((): string => {
           if (answer === undefined && hiding) {
-            return 'Choose where to hide Alex';
+            return 'Manipulating the market';
           } else if (hiding) {
-            return `You chose to hide Alex ${answer}`;
+            return `You choose ${answer}`;
           } else {
-            return `You think Alex is ${answer}`;
+            return `You think Gary is ${answer}`;
           }
         })()}
       </p>
@@ -40,14 +40,14 @@ function ChooseAlexLocation({ setAnswer, answer, hiding }: HideAlexProps) {
   );
 }
 
-type AlexButtonProps = {
+type GaryButtonProps = {
   imgSrc: string;
   text: string;
   selected?: boolean;
   onClick: () => void;
 };
 
-const AlexButton = ({ imgSrc, text, selected, onClick }: AlexButtonProps) => {
+const GaryButton = ({ imgSrc, text, selected, onClick }: GaryButtonProps) => {
   return (
     <button
       onClick={onClick}
@@ -78,4 +78,4 @@ const AlexButton = ({ imgSrc, text, selected, onClick }: AlexButtonProps) => {
   );
 };
 
-export default ChooseAlexLocation;
+export default ChooseGaryDecision;

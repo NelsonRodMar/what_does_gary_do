@@ -1,10 +1,10 @@
 import PageHeader from '@components/PageHeader';
-import SelectedAlexLocation from '@components/SelectedAlexLocation';
+import SelectedGaryDecision from '@components/SelectedGaryDecision';
 import Wager from '@components/Wager';
 import Button from '@components/Button';
 import { useNavigate } from 'react-router-dom';
 import { useGameStore } from '@state/gameStore';
-import { getAnswer } from '@state/RecordTypes/wheres_alex_vxxx';
+import { getAnswer } from '@state/RecordTypes/what_does_gary_do_vxxx';
 import { shortenAddress } from '@puzzlehq/sdk';
 import { useInitCurrentGame } from '@hooks/currentGame';
 
@@ -40,26 +40,26 @@ const Lose = () => {
 
   return (
     <div className='flex h-full w-full flex-col justify-center gap-4'>
-      <PageHeader text="WHERE'S ALEX" bg='bg-primary-blue' />
+      <PageHeader text="WHAT DOES GARY DO" bg='bg-primary-blue' />
       <Wager wagerAmount={wager} winnings />
       <div className='flex flex-col gap-2'>
         {challenger_answer && (
-          <SelectedAlexLocation
+          <SelectedGaryDecision
             answer={getAnswer(challenger_answer)}
             win={false}
           />
         )}
         <div className='self-center whitespace-nowrap text-center text-sm font-extrabold tracking-tight text-primary-green'>
           {isChallenger
-            ? `You put Alex ${getAnswer(challenger_answer)}`
-            : `${shortenAddress(challenger_address)} put Alex ${getAnswer(
+            ? `You choose ${getAnswer(challenger_answer)}`
+            : `${shortenAddress(challenger_address)} choose ${getAnswer(
                 challenger_answer
               )}`}
         </div>
         <div className='self-center whitespace-nowrap text-center text-sm font-extrabold tracking-tight text-primary-green'>
           {!isChallenger
-            ? `You guessed Alex was ${getAnswer(opponent_answer)}`
-            : `${shortenAddress(opponent_address)} guessed Alex was ${getAnswer(
+            ? `You guessed Gary was ${getAnswer(opponent_answer)}`
+            : `${shortenAddress(opponent_address)} guessed Gary was ${getAnswer(
                 opponent_answer
               )}`}
         </div>

@@ -8,7 +8,7 @@ import {
   getGameAction,
   getGameState,
   parseGameRecord,
-} from './RecordTypes/wheres_alex_vxxx';
+} from './RecordTypes/what_does_gary_do_vxxx';
 import { useRenegeStore } from '@pages/Renege/store';
 import { Step, useAcceptGameStore } from '@pages/AcceptGame/store';
 import { useNewGameStore } from '@pages/NewGame/store';

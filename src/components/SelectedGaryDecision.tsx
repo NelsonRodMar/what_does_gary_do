@@ -1,30 +1,30 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import behindBuildingImg from '../assets/behind_building.svg';
-import inWeedsImg from '../assets/in_weeds.jpg';
-import { Answer } from '@state/RecordTypes/wheres_alex_vxxx.js';
+import approvingBtcEtf from '../assets/approving_btc_etf.jpg';
+import manipulatingMarketImg from '../assets/manipulating_the_market.jpg';
+import { Answer } from '@state/RecordTypes/what_does_gary_do_vxxx.js';
 
-type SelectedAlexLocationProps = {
+type SelectedGaryDecisionProps = {
   answer: Answer;
   win?: boolean;
 };
 
-function SelectedAlexLocation({ answer, win }: SelectedAlexLocationProps) {
-  const LeftAlex = () => {
+function SelectedGaryDecision({ answer, win }: SelectedGaryDecisionProps) {
+  const LeftGary = () => {
     return (
       <div className='flex w-1/2 flex-col gap-2 self-start'>
         <img
           loading='lazy'
-          src={inWeedsImg}
+          src={manipulatingMarketImg}
           className={`aspect-square w-full self-stretch overflow-hidden rounded-[50%] object-cover object-center
-                      ${answer === Answer.InTheWeeds ? '' : 'opacity-40'}`}
-          alt={Answer.InTheWeeds}
+                      ${answer === Answer.ManipulatingTheMarket ? '' : 'opacity-40'}`}
+          alt={Answer.ManipulatingTheMarket}
         />
         {win === undefined && (
           <div
             className={`self-center whitespace-nowrap text-center text-sm font-extrabold tracking-tight
-                        ${answer === Answer.InTheWeeds ? '' : 'opacity-40'}
+                        ${answer === Answer.ManipulatingTheMarket ? '' : 'opacity-40'}
                         ${
-                          answer === Answer.InTheWeeds
+                          answer === Answer.ManipulatingTheMarket
                             ? 'text-primary-green'
                             : 'text-primary-white'
                         }`}
@@ -36,33 +36,33 @@ function SelectedAlexLocation({ answer, win }: SelectedAlexLocationProps) {
     );
   };
 
-  const RightAlex = () => {
+  const RightGary = () => {
     return (
       <div className='flex w-1/2 flex-col gap-2 self-start'>
         <img
           loading='lazy'
-          src={behindBuildingImg}
+          src={approvingBtcEtf}
           className={`aspect-square w-full self-stretch overflow-hidden rounded-[50%] object-cover object-center
                       ${
-                        answer === Answer.BehindTheBuilding ? '' : 'opacity-40'
+                        answer === Answer.ApprovingBTCETF ? '' : 'opacity-40'
                       }`}
-          alt={Answer.BehindTheBuilding}
+          alt={Answer.ApprovingBTCETF}
         />
         {win === undefined && (
           <div
             className={`self-center whitespace-nowrap text-center text-sm font-extrabold tracking-tight
                         ${
-                          answer === Answer.BehindTheBuilding
+                          answer === Answer.ApprovingBTCETF
                             ? ''
                             : 'opacity-40'
                         }
                         ${
-                          answer === Answer.BehindTheBuilding
+                          answer === Answer.ApprovingBTCETF
                             ? 'text-primary-green'
                             : 'text-primary-white'
                         }`}
           >
-            Behind the Building
+            Approving BTC ETF
           </div>
         )}
       </div>
@@ -98,33 +98,33 @@ function SelectedAlexLocation({ answer, win }: SelectedAlexLocationProps) {
       <div className='flex w-[298px] max-w-full items-center justify-between gap-5 self-center'>
         {win === undefined ? (
           <>
-            <LeftAlex />
-            <RightAlex />
+            <LeftGary />
+            <RightGary />
           </>
         ) : (
           <>
-            {win === true && answer === Answer.InTheWeeds && (
+            {win === true && answer === Answer.ManipulatingTheMarket && (
               <>
-                <LeftAlex />
+                <LeftGary />
                 <WinText />
               </>
             )}
-            {win === true && answer === Answer.BehindTheBuilding && (
+            {win === true && answer === Answer.ApprovingBTCETF && (
               <>
                 <WinText />
-                <RightAlex />
+                <RightGary />
               </>
             )}
-            {win === false && answer === Answer.InTheWeeds && (
+            {win === false && answer === Answer.ManipulatingTheMarket && (
               <>
-                <LeftAlex />
+                <LeftGary />
                 <LoseText />
               </>
             )}
-            {win === false && answer === Answer.BehindTheBuilding && (
+            {win === false && answer === Answer.ApprovingBTCETF && (
               <>
                 <LoseText />
-                <RightAlex />
+                <RightGary />
               </>
             )}
           </>
@@ -134,4 +134,4 @@ function SelectedAlexLocation({ answer, win }: SelectedAlexLocationProps) {
   );
 }
 
-export default SelectedAlexLocation;
+export default SelectedGaryDecision;

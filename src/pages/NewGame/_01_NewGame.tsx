@@ -36,7 +36,7 @@ function NewGame() {
       <div className='flex flex-grow flex-col' />
       <Button
         className='mb-6'
-        onClick={() => setStep(Step._02_HideAlex)}
+        onClick={() => setStep(Step._02_SetGaryDecision)}
         color='green'
         disabled={
           !inputs ||

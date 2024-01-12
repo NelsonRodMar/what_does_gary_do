@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import PageHeader from '@components/PageHeader';
 import Nav from '@components/Nav';
-import ChooseAlexLocation from '@components/ChooseAlexLocation';
+import ChooseGaryDecision from '@components/ChooseGaryDecision.js';
 import Button from '@components/Button';
 import {
   requestCreateEvent,
@@ -17,7 +17,7 @@ import {
   transitionFees,
 } from '@state/manager.js';
 import { useEffect, useState } from 'react';
-import { Answer } from '@state/RecordTypes/wheres_alex_vxxx.js';
+import { Answer } from '@state/RecordTypes/what_does_gary_do_vxxx.js';
 import { Step, useAcceptGameStore } from './store.js';
 import { useGameStore } from '@state/gameStore.js';
 import { useMsRecords } from '@hooks/msRecords.js';
@@ -204,12 +204,12 @@ function AcceptGame() {
       <div className='flex h-full w-full flex-col items-center gap-6 px-5'>
         <div className='flex w-full flex-col gap-2'>
           <Nav step={2} isChallenger={false} />
-          <PageHeader bg='bg-primary-blue' text='FIND ALEX' />
+          <PageHeader bg='bg-primary-blue' text='FIND GARY DECISION' />
         </div>
-        <ChooseAlexLocation
+        <ChooseGaryDecision
           setAnswer={(answer) => {
             const newAnswer =
-              answer === Answer.InTheWeeds ? '0field' : '1field';
+              answer === Answer.ManipulatingTheMarket ? '0field' : '1field';
             setInputs({
               ...inputs,
               opponent_answer: newAnswer,

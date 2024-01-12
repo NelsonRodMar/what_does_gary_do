@@ -4,7 +4,7 @@ import { ProposeGameInputs } from '@state/manager';
 
 export enum Step {
   _01_NewGame,
-  _02_HideAlex,
+  _02_SetGaryDecision,
   _03_StartWager,
   _04_ConfirmStartGame,
   _05_GameStarted,

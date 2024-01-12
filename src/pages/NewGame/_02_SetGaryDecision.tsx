@@ -1,12 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Nav from '@components/Nav';
-import ChooseAlexLocation from '@components/ChooseAlexLocation';
+import ChooseGaryDecision from '@components/ChooseGaryDecision';
 import PageHeader from '@components/PageHeader';
 import Button from '@components/Button';
-import { Answer } from '@state/RecordTypes/wheres_alex_vxxx';
+import { Answer } from '@state/RecordTypes/what_does_gary_do_vxxx';
 import { Step, useNewGameStore } from './store';
 
-function HideAlex() {
+function SetGaryDecision() {
   const [inputs, setInputs, setStep] = useNewGameStore((state) => [
     state.inputs,
     state.setInputs,
@@ -18,10 +18,10 @@ function HideAlex() {
       <div className='flex h-full w-full flex-col items-center gap-2 px-5'>
         <Nav step={2} />
         <PageHeader
-          text='WHERE WOULD YOU LIKE TO HIDE ALEX?'
+          text='WHAT WOULD YOU LIKE TO GARY DO ?'
           bg='bg-primary-blue'
         />
-        <ChooseAlexLocation
+        <ChooseGaryDecision
           setAnswer={(challenger_answer: Answer) =>
             setInputs({ ...inputs, challenger_answer })
           }
@@ -42,4 +42,4 @@ function HideAlex() {
   );
 }
 
-export default HideAlex;
+export default SetGaryDecision;

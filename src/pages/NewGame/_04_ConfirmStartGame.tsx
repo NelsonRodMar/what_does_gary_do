@@ -2,7 +2,7 @@
 import Versus from '@components/Versus.js';
 import PageHeader from '@components/PageHeader.js';
 import Wager from '@components/Wager.js';
-import SelectedAlexLocation from '@components/SelectedAlexLocation.js';
+import SelectedGaryDecision from '@components/SelectedGaryDecision.js';
 import Button from '@components/Button.js';
 import {
   GAME_FUNCTIONS,
@@ -10,7 +10,7 @@ import {
   ProposeGameInputs,
   transitionFees,
 } from '@state/manager.js';
-import { Answer } from '@state/RecordTypes/wheres_alex_vxxx.js';
+import { Answer } from '@state/RecordTypes/what_does_gary_do_vxxx.js';
 import { useEventHandling } from '@hooks/eventHandling.js';
 import {
   createSharedState,
@@ -117,7 +117,7 @@ function ConfirmStartGame() {
           challenger_sig: signature.signature,
           challenger_nonce: messageToSign, /// todo - make this random
           challenger_answer:
-            inputs.challenger_answer === Answer.InTheWeeds
+            inputs.challenger_answer === Answer.ManipulatingTheMarket
               ? '0field'
               : '1field',
           game_multisig_seed,
@@ -174,9 +174,9 @@ function ConfirmStartGame() {
       <Wager wagerAmount={Number(amount)} />
       {answer && (
         <div className='flex flex-col gap-2'>
-          <SelectedAlexLocation answer={answer as Answer} win={undefined} />
+          <SelectedGaryDecision answer={answer as Answer} win={undefined} />
           <div className='self-center whitespace-nowrap text-center text-sm font-extrabold tracking-tight text-primary-green'>
-            You chose to hide Alex {answer}!
+            You chose {answer}!
           </div>
         </div>
       )}
