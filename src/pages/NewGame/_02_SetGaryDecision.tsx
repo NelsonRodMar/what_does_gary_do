@@ -3,7 +3,7 @@ import Nav from '@components/Nav';
 import ChooseGaryDecision from '@components/ChooseGaryDecision';
 import PageHeader from '@components/PageHeader';
 import Button from '@components/Button';
-import { Answer } from '@state/RecordTypes/wheres_alex_vxxx';
+import { Answer } from '@state/RecordTypes/what_does_gary_do_vxxx';
 import { Step, useNewGameStore } from './store';
 
 function SetGaryDecision() {
